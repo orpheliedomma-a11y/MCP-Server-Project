@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "TravelItineraryServer": {
+      "command": "connect",
+      "args": ["http://localhost:8080"]
+    }
+  }
+}
