@@ -9,14 +9,11 @@ load_dotenv()
 
 app = FastMCP("travel-itinerary-mcp")
 
-# Register tools by passing the function directly
+# Register tools
 app.tool(generate_itinerary)
 app.tool(get_weather_forecast)
 app.tool(recommend_hotels)
 
 if __name__ == "__main__":
-    app.run(
-        transport="sse",      # REQUIRED for network server
-        host="0.0.0.0",
-        port=8080
-    )
+    # Claude Desktop requires STDIO transport
+    app.run(transport="stdio")
